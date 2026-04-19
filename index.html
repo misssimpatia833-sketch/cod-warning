@@ -1,0 +1,232 @@
+[19/04/2026 15:28] Mia Wallace: <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Critical Status</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.86), rgba(0,0,0,0.94)),
+        repeating-linear-gradient(
+          0deg,
+          rgba(255,255,255,0.02) 0px,
+          rgba(255,255,255,0.02) 1px,
+          transparent 1px,
+          transparent 3px
+        ),
+        radial-gradient(circle at center, #111 0%, #000 70%);
+      color: #e7e7e7;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      padding: 40px 30px;
+    }
+
+    .frame {
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 60px 40px 50px;
+      background: rgba(10, 10, 10, 0.55);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.03),
+        0 0 40px rgba(0,0,0,0.65);
+    }
+
+    .frame::before,
+    .frame::after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      border-color: rgba(255,255,255,0.18);
+      pointer-events: none;
+    }
+
+    .frame::before {
+      top: 14px;
+      left: 14px;
+      border-top: 2px solid;
+      border-left: 2px solid;
+    }
+
+    .frame::after {
+      bottom: 14px;
+      right: 14px;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+    }
+
+    .status {
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 16px;
+    }
+
+    .alert {
+      font-size: 70px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #cfcfcf;
+      line-height: 1;
+      margin-bottom: 24px;
+      text-shadow:
+        0 0 8px rgba(255,255,255,0.08),
+        0 0 18px rgba(255,255,255,0.04);
+      animation: pulse 1.8s infinite;
+    }
+
+    .message {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 26px;
+      line-height: 1.6;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: #f1f1f1;
+    }
+
+    .message .highlight {
+      color: #ff4d4d;
+      text-shadow: 0 0 10px rgba(255, 77, 77, 0.24);
+    }
+
+    .sub {
+      margin-top: 26px;
+      font-size: 21px;
+      line-height: 1.5;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .bottom-bar {
+      margin-top: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .tag {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .scanline {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255,255,255,0.035) 50%,
+        transparent 100%
+      );
+      animation: scan 5s linear infinite;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      opacity: 0.045;
+      background-image:
+        repeating-radial-gradient(circle at 0 0, transparent 0, #fff 1px, transparent 2px);
+      background-size: 4px 4px;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.88;
+        transform: scale(1.01);
+      }
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-20%); }
+      100% { transform: translateY(20%); }
+    }
+
+    @media (max-width: 768px) {
+      .frame {
+        padding: 42px 22px 38px;
+      }
+
+      .
+[19/04/2026 15:28] Mia Wallace: alert {
+        font-size: 42px;
+        letter-spacing: 4px;
+      }
+
+      .message {
+        font-size: 18px;
+      }
+
+      .sub {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanline"></div>
+
+  <div class="overlay">
+    <div class="frame">
+      <div class="status">TACTICAL STATUS // CRITICAL</div>
+
+      <div class="alert">WARNING</div>
+
+      <div class="message">
+        LA TUA VITA È <span class="highlight">AL LIMITE</span>.<br>
+        USA UNA <span class="highlight">CASSETTA DI PRONTO SOCCORSO</span><br>
+        PER RECUPERARLA.
+      </div>
+
+      <div class="sub">
+        NON HAI GIOCATORI CHE POSSANO AIUTARTI.
+      </div>
+
+      <div class="bottom-bar">
+        <div class="tag">HEALTH: 01%</div>
+        <div class="tag">SQUAD: OFFLINE</div>
+        <div class="tag">REVIVE: UNAVAILABLE</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
